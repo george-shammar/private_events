@@ -8,11 +8,12 @@ class UsersController < ApplicationController
       
       if @user.save
         redirect_to new_user_path
+        session[:current_user] = @user
       else
         render :new
       end
-    end  
-    
+    end
+   
     private  
     
     def user_params
