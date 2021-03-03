@@ -13,6 +13,11 @@ class UsersController < ApplicationController
         render :new
       end
     end
+
+    def show
+      @user = User.find(params[:id])
+      @events = Event.find_by(creator_id: @user.id)
+    end
    
     private  
     
