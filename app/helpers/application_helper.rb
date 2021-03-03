@@ -1,5 +1,5 @@
 module ApplicationHelper
-    def navbar_button_name(member)
+    def navbar_button_name(user)
         link_to user.name, '/',  class: 'btn btn-light mx-1' if user_signed_in?
     end
     
