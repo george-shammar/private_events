@@ -10,7 +10,7 @@ class EventsController < ApplicationController
 
     if @event.save
       redirect_to @event
-    else 
+    else
       render :new
     end
   end
@@ -25,5 +25,4 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:title, :location, :date, :time)
   end
-
 end
