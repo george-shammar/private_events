@@ -17,35 +17,38 @@
         </div>
 
     </div>
+
     <div class="col-sm">
       Location
       <div>
-            <% @events.each do |event| %>
-                <li>
-                    <%= event.location %>
-                    </li>
-            <% end %>
-        </div>
+        <% @events.each do |event| %>
+            <li>
+                <%= event.location %>
+            </li>
+        <% end %>
+      </div>
     </div>
+
     <div class="col-sm">
       Date
       <div>
-                <% @events.each do |event| %>
-                    <li>
-                    <%= event.date %>
-                    </li>
-                <% end %>
-        </div>
+        <% @events.each do |event| %>
+            <li>
+                <%= event.date %>
+            </li>
+        <% end %>
+      </div>
     </div>
+
     <div class="col-sm">
       Time
       <div>
-                <% @events.each do |event| %>
-                    <li>
-                    <%= event.time %>
-                    </li>
-                <% end %>
-        </div>
+        <% @events.each do |event| %>
+            <li>
+                <%= event.time %>
+            </li>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
