@@ -1,9 +1,53 @@
-<h1>Welcome To Private Events</h1>
+<div class="container-fluid">
+<h1>Welcome To Private Events</h1><br><br>
 
-<ul>
-  <% @events.each do |event| %>
-    <li>
-      <%= event.title %>
-    </li>
-  <% end %>
-</ul>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      Events
+        <div>
+            <ol>
+                <% @events.each do |event| %>
+                    <li>
+                    <%= event.title %>
+                    </li>
+                <% end %>
+            </ol>
+        </div>
+
+    </div>
+    <div class="col-sm">
+      Location
+      <div>
+            <% @events.each do |event| %>
+                <li>
+                    <%= event.location %>
+                    </li>
+            <% end %>
+        </div>
+    </div>
+    <div class="col-sm">
+      Date
+      <div>
+                <% @events.each do |event| %>
+                    <li>
+                    <%= event.date %>
+                    </li>
+                <% end %>
+        </div>
+    </div>
+    <div class="col-sm">
+      Time
+      <div>
+                <% @events.each do |event| %>
+                    <li>
+                    <%= event.time %>
+                    </li>
+                <% end %>
+        </div>
+    </div>
+  </div>
+</div>
+
+</div>
