@@ -5,7 +5,7 @@ module UsersHelper
 
   def list_events_by_user(user)
     find_events_by_user(user).find_each do |event|
-      event.title
+      link_to event.title, event_path(event.id) 
     end
   end
 end

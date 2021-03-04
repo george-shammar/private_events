@@ -1,1 +1,6 @@
-<%= find_events_by_user(current_user).last[:title] %>
+
+<% find_events_by_user(current_user).find_each do |event| %>
+  <%= link_to event.title, event_path(event.id)  %></br>
+<% end %>
+
+ <%= list_events_by_user(current_user) %> 

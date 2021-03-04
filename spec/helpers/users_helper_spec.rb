@@ -8,5 +8,6 @@ RSpec.describe UsersHelper, type: :helper do
     events = find_events_by_user(creator)
     expect(events.all? { |event| event.user === creator }).to be true
     end
+  it '' 
 
 end
