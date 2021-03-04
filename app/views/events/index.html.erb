@@ -1,0 +1,9 @@
+<h1>Welcome To Private Events</h1>
+
+<ul>
+  <% @events.each do |event| %>
+    <li>
+      <%= event.title %>
+    </li>
+  <% end %>
+</ul>
