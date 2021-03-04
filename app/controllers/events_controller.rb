@@ -1,9 +1,9 @@
 class EventsController < ApplicationController
-  def new
-    @event = current_user.events.build
-  end
+    def new
+      @event = current_user.events.build
+   end
 
-  def create
+   def create
     @event = current_user.events.build(event_params)
 
     if @event.save
@@ -11,7 +11,7 @@ class EventsController < ApplicationController
     else 
       render :new
     end
-  end
+   end
 
   def show
     @event = Event.find(params[:id])
