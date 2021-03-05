@@ -3,4 +3,8 @@
   <p>Location: <%= @event.location %></p>
   <p>Date: <%= @event.date %></p>
   <p>Time: <%= @event.time %></p>
-</div>
+  </br>
+  </br>
+
+  <h3>Who is comming? </h3>
+  <p><%= show_invitees(@event_invitees) %></p>

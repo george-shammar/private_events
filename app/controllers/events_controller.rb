@@ -22,6 +22,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @creator = User.find(@event.creator_id)
+    @event_invitees = Invitation.list_invitees(@event)
   end
 
   private
