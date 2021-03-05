@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @user_events = User.find_events_by_user(@user)
   end
 
   private
