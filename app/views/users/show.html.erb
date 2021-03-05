@@ -1,12 +1,1 @@
-<%
-=begin%>
- 
-<% find_events_by_user(current_user).find_each do |event| %>
-  <%= link_to event.title, event_path(event.id)  %></br>
-<% end %> 
-<%
-=end%>
-
-<% @user_events.each do |event| %>
-  <%= link_to event[0], event_path(event[1]) %>
-<% end %>
+<%= list_events(@user_events) %>
