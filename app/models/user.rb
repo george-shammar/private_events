@@ -8,4 +8,8 @@ def self.find_events_by_user(user)
   .pluck(:title, :id)
 end
 
+def self.find_invitations_by_user(user)
+  Invitation.where(invitee_id: user.id).pluck(:event_id)
+end
+
 end

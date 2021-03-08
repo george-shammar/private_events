@@ -3,3 +3,4 @@ class Event < ApplicationRecord
   has_many :invitations
   has_many :invitees, through: :invitations, source: :invitee
 end
+
