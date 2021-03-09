@@ -1,6 +1,10 @@
 module ApplicationHelper
   def navbar_button_name(user)
-    link_to user.name, '/', class: 'btn btn-light mx-1' if user_signed_in?
+    link_to user.name, user_path(user.id), class: 'btn btn-light mx-1' if user_signed_in?
+  end
+
+  def navbar_button_home
+    link_to 'Home', root_path, class: 'btn btn-primary mx-1'
   end
 
   def navbar_button_new_event

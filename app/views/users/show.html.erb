@@ -1,2 +1,14 @@
-<%= list_events(@user_events) %>
-<%= list_invitations(@invitations) %>
+<div class="container-fluid d-flex">
+  <div class="col">
+    <h2>Created events</h2>
+    <%= list_events(@user_events) %>
+  </div>
+  <div class="col">
+    <h2>Previously attended events</h2>
+    <%= list_invitations(@past_invitations) %>
+  </div>
+    <div class="col">
+    <h2>Upcoming events</h2>
+    <%= list_invitations(@upcoming_invitations) %>
+  </div>
+</div>

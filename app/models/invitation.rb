@@ -12,9 +12,13 @@ class Invitation < ApplicationRecord
             .pluck(:name)
     end
 
+    def self.list_past_invitations(user)
+        Event.past_events.where( {id: self.where(invitee_id: user.id)})
+            .pluck(:title, :id)
+    end
 
-    def self.list_invitations(user)
-        Event.where( {id: self.where(invitee_id: user.id)})
+    def self.list_upcoming_invitations(user)
+        Event.upcoming_events.where( {id: self.where(invitee_id: user.id)})
             .pluck(:title, :id)
     end
 
