@@ -8,3 +8,4 @@
 
   <h3>Who is comming? </h3>
   <p><%= show_invitees(@invitees) %></p>
+  <%= link_to 'Invite', new_invitation_path, class: 'btn btn-primary mx-1' if user_signed_in? %>

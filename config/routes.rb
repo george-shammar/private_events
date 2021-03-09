@@ -10,4 +10,9 @@ Rails.application.routes.draw do
     delete '/logout',  to: 'sessions#destroy'
 
     root 'events#index'
+
+    # Create invitations
+    get '/events/:id/invitations/new', to: 'invitations#new', as: 'new_invitation'
+    post '/events/:id/invitations/new', to: 'invitations#create'
+
 end
