@@ -10,6 +10,20 @@ require 'rails_helper'
 #     end
 #   end
 # end
-RSpec.describe EventsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe EventsHelper, type: :system do
+  describe 'index page' do
+    it 'shows a list of past events' do
+      @birthday = Event.create(title: 'Birthday', location: 'Foo City', date: '2020-04-02',
+        time: '2000-01-01 14:22:00.000000000 +0000', description: 'Birthday', creator_id: 1)
+      visit root_path
+      expect(page).to have_content('Birthday')
+    end
+
+    it 'shows a list of upcoming events' do
+      @birthday = Event.create(title: 'Birthday', location: 'Foo City', date: '2023-04-02',
+        time: '2000-01-01 14:22:00.000000000 +0000', description: 'Birthday', creator_id: 1)
+      visit root_path
+      expect(page).to have_content('Birthday')
+    end
+  end
 end
