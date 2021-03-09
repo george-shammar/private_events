@@ -1,11 +1,18 @@
 <%= form_with model: @event do |form| %>
   <%= form.label(:title, "Title: ")%><br>
   <%= form.text_field :title, placeholder: "Title for your Event" %><br>
+  
+  <%= form.label(:description, "Description: ")%><br>
+  <%= form.text_area :description, placeholder: "What is your event about?" %><br>
+  
   <%= form.label(:location, "Location: ")%><br>
   <%= form.text_field :location, placeholder: "Bikini Bottom"%><br>  
+  
   <%= form.label(:date, "Date: ")%><br>
   <%= form.date_field :date %><br>
+  
   <%= form.label(:time, "Time: ")%><br>
   <%= form.time_field :time %><br><br>
+  
   <%= form.submit("Submit")%>
 <% end %>
