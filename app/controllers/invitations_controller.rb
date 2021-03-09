@@ -23,18 +23,3 @@ class InvitationsController < ApplicationController
   end
 
 end
-
-# params = { "email"=>"patrick@star.com" }
-# @email = invitation_params[:email]
-
-# @invitee = User.where(email: @email)
-
-# creating an invitation
-
-# 1 prompt the user for an email
-# 2 store the current event id in a variable
-# 3 
-# create an invitation
-
-# - obtain the email -> @email
-# - User.where(email: @email ).pluck[:id]
