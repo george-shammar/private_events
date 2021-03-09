@@ -5,5 +5,13 @@ class Event < ApplicationRecord
 
   scope :past_events, -> { where( 'date < ?', DateTime.now) }
   scope :upcoming_events, -> { where( 'date > ?', DateTime.now) }
+
+  def self.find_upcoming_events
+    self.upcoming_events.order("created_at DESC").pluck(:title, :id)
+  end
+
+  def self.find_past_events
+    self.past_events.order("created_at DESC").pluck(:title, :id)
+  end
 end
 
