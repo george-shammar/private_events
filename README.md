@@ -3,7 +3,7 @@
 
 # Private Events
 
-> A simple blog where only members can write posts and see the authors of other posts.
+> An event booking and creation application where users can create events and send invitations.
 
 ![screenshot](./Screenshot.png)
 
