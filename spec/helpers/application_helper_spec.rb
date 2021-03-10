@@ -50,4 +50,13 @@ RSpec.describe ApplicationHelper, type: :system do
             expect(page).to have_content('Foo')
         end
     end
+
+    describe 'login page' do
+        it 'displays an alert when a non-registered user tries to login' do
+            visit login_path
+            fill_in 'email', with: 'non_registered@bar.com'
+            click_on 'Submit'
+            expect(page).to have_content('User not found.')
+        end
+    end
 end
