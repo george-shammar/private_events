@@ -19,7 +19,6 @@ class UsersController < ApplicationController
     @user_events = User.find_events_by_user(@user)
     @past_invitations = Invitation.list_past_invitations(@user)
     @upcoming_invitations = Invitation.list_upcoming_invitations(@user)
-    
   end
 
   private

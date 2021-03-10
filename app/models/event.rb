@@ -3,15 +3,14 @@ class Event < ApplicationRecord
   has_many :invitations
   has_many :invitees, through: :invitations, source: :invitee
 
-  scope :past_events, -> { where( 'date < ?', DateTime.now) }
-  scope :upcoming_events, -> { where( 'date > ?', DateTime.now) }
+  scope :past_events, -> { where('date < ?', DateTime.now) }
+  scope :upcoming_events, -> { where('date > ?', DateTime.now) }
 
   def self.find_upcoming_events
-    self.upcoming_events.order("created_at DESC").pluck(:title, :id)
+    upcoming_events.order('created_at DESC').pluck(:title, :id)
   end
 
   def self.find_past_events
-    self.past_events.order("created_at DESC").pluck(:title, :id)
+    past_events.order('created_at DESC').pluck(:title, :id)
   end
 end
-

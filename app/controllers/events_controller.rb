@@ -2,14 +2,14 @@ class EventsController < ApplicationController
   def index
     @past_events = Event.find_past_events
     @upcoming_events = Event.find_upcoming_events
-  end  
-  
+  end
+
   def new
     @event = current_user.events.build
     @user = User.find(current_user.id)
   end
 
-   def create
+  def create
     @event = current_user.events.build(event_params)
     @user = User.find(current_user.id)
 
@@ -18,7 +18,7 @@ class EventsController < ApplicationController
     else
       render :new
     end
-   end
+  end
 
   def show
     @event = Event.find(params[:id])
@@ -26,7 +26,7 @@ class EventsController < ApplicationController
     @event_invitees = Invitation.list_invitees(@event)
     @invitees = Invitation.name_invitees(@event_invitees)
   end
- 
+
   private
 
   def event_params

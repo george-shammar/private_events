@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       redirect_to @user
     else
       redirect_to login_path
-      flash.alert = "User not found."
+      flash.alert = 'User not found.'
     end
   end
 
