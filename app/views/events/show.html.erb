@@ -1,0 +1,11 @@
+<div class= "container-fluid">
+  <h1><%= @event.title%></h1>
+  <p>Location: <%= @event.location %></p>
+  <p>Date: <%= @event.date %></p>
+  <p>Time: <%= @event.time %></p>
+  </br>
+  </br>
+
+  <h3>Who is comming? </h3>
+  <p><%= show_invitees(@invitees) %></p>
+  <%= link_to 'Invite', new_invitation_path, class: 'btn btn-primary mx-1' if user_signed_in? %>
